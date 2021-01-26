@@ -4,7 +4,7 @@
       class="text-center bg-color"
       cols="12"
     >
-      {{ new Date().getFullYear() }} — <strong>Brankrate</strong>
+      {{ new Date().getFullYear() }} — <strong>Bankfo</strong>
     </v-col>
   </v-footer>
 </template>
@@ -17,6 +17,6 @@
 
 <style scoped>
 .bg-color{
-  background-color: #c7c7c7;
+  background-color: #e6dde7;
 }
 </style>
