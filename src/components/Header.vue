@@ -12,13 +12,15 @@
 
     <v-spacer/>
 
-    <v-btn>
-      Branches
-    </v-btn>
-
-    <v-btn class="ma-2">
-      About
-    </v-btn>
+    
+      <router-link to="/branches">
+      <v-btn>Branches</v-btn>
+      </router-link>
+    
+      <router-link to="/about">
+        <v-btn class="ma-2">About</v-btn>
+      </router-link>
+    
   </v-app-bar>
 </template>
 
@@ -29,5 +31,7 @@
 </script>
 
 <style scoped>
-
+a{
+  text-decoration: none;
+}
 </style>

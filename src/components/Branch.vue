@@ -1,6 +1,6 @@
 <template>
-  <div>
-
+  <div class="branch">
+    <h2>Welcome to the branch section!!</h2>
   </div>
 </template>
 

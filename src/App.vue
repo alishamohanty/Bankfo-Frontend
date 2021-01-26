@@ -4,7 +4,11 @@
         <page-header/>
         <v-content>
           <v-container>
-            <router-view/>
+            <transition>
+              <keep-alive>
+                <router-view></router-view>
+              </keep-alive>
+            </transition>
           </v-container>
         </v-content>
         <page-footer/>
@@ -14,8 +18,8 @@
 
 <script>
 // import Branch from './components/Branch.vue'
-import PageHeader from './components/Footer.vue'
-import PageFooter from './components/Header.vue'
+import PageFooter from './components/Footer.vue'
+import PageHeader from './components/Header.vue'
 export default {
   name: 'App',
   components: {
