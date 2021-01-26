@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
-    <Branch msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <div id="app">
+      <Branch msg="Welcome to Your Vue.js App"/>
+    </div>
+  </v-app>
 </template>
 
 <script>
