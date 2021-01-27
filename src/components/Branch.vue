@@ -7,7 +7,7 @@
       <v-col cols="10" sm="5" md="7">
         <v-text-field
           v-model="search"
-          label="Search"
+          label="Search Branches"
           dense
           solo
         ></v-text-field>
@@ -24,6 +24,18 @@
         ></v-select>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col cols="12">
+        <v-data-table
+        v-model="bookmarked"
+        :headers="tableHeaders"
+        :items="bank"
+        :search="search"
+        show-select
+        item-key="ifsc"
+      ></v-data-table>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -31,7 +43,20 @@
 export default {
   data() {
     return {
-      cities: ["Bangalore", "Delhi", "Pune", "Chennai", "Hyderabad"]
+      bookmarked:[],
+      search:"",
+      city:"Bangalore",
+      cities: ["Bangalore", "Delhi", "Pune", "Chennai", "Hyderabad"],
+      tableHeaders: [
+        { text: "IFSC", align: "center", value: "ifsc" },
+        { text: "BANK ID", align: "center", value: "bank_id" },
+        { text: "BRANCH", align: "center", value: "branch" },
+        { text: "ADDRESS", align: "center", value: "address" },
+        { text: "CITY", align: "center", value: "city" },
+        { text: "DISTRICT", align: "center", value: "district" },
+        { text: "STATE", align: "center", value: "state" },
+        { text: "BANK NAME", align: "center", value: "bank_name" }
+      ]
     };
   },
   name: "",
