@@ -18,7 +18,7 @@
           v-model="city"
           :items="cities"
           label="Cities"
-          v-on:change="onChange"
+          v-on:change="onCityChange"
           dense
           solo
         ></v-select>
@@ -29,7 +29,7 @@
         <v-data-table
         v-model="bookmarked"
         :headers="tableHeaders"
-        :items="bank"
+        :items="banks"
         :search="search"
         show-select
         item-key="ifsc"
@@ -40,11 +40,14 @@
 </template>
 
 <script>
+import BranchSearchService from '../services/BranchSearchService'
+
 export default {
   data() {
     return {
       bookmarked:[],
       search:"",
+      banks: "",
       city:"Bangalore",
       cities: ["Bangalore", "Delhi", "Pune", "Chennai", "Hyderabad"],
       tableHeaders: [
@@ -59,9 +62,38 @@ export default {
       ]
     };
   },
-  name: "",
-  components: {},
-  props: {},
+  mounted() {
+    if(localStorage.bookmarked)
+    {
+      this.bookmarked = JSON.parse(localStorage.bookmarked);
+    }
+    BranchSearchService.search(this.city)
+    .then( result => {
+      this.banks = result.data
+    })
+    .catch(err => {
+      this.errors.push(err)
+    })
+  },
+  methods:{
+    onCityChange: function(){
+      BranchSearchService.search(this.city)
+      .then(result => {
+        this.banks = result.data;
+      })
+      .catch(err => {
+        this.errors.push(err)
+      })
+    }
+  },
+  watch: {
+    bookmarked: {
+      handler(){
+        localStorage.setItem("bookmarked", JSON.stringify(this.bookmarked))
+      },
+      deep:true
+    }
+  }
 };
 </script>
 
