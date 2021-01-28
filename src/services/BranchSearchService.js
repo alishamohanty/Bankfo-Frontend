@@ -1,6 +1,6 @@
 import Api from './Api'
 export default {
-  search(city) {
-    return Api().get(`branches?q=${city}`)
+  search(city, limit) {
+    return Api().get(`/api/branches?q=${city}&limit=${limit}&offset=0`)
   }
 }

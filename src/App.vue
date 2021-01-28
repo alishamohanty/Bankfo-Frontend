@@ -2,7 +2,7 @@
   <div id="app">
       <v-app>
         <page-header/>
-        <v-content>
+        <v-main>
           <v-container>
             <transition>
               <keep-alive>
@@ -10,7 +10,7 @@
               </keep-alive>
             </transition>
           </v-container>
-        </v-content>
+        </v-main>
         <page-footer/>
       </v-app>
   </div>
@@ -31,11 +31,8 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto';
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
 }
 </style>

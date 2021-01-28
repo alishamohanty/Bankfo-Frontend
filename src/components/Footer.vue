@@ -1,5 +1,5 @@
 <template>
-  <v-footer padless absolute>
+  <v-footer padless>
     <v-col
       class="text-center bg-color"
       cols="12"
@@ -18,5 +18,8 @@
 <style scoped>
 .bg-color{
   background-color: #e6dde7;
+}
+.footer{
+  margin-top:2rem;
 }
 </style>
